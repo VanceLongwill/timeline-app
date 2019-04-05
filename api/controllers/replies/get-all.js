@@ -1,7 +1,7 @@
 module.exports = async function getAllMessages(req, res) {
   var messageId = req.param('id');
   if (!messageId) {
-    return res.badRequest(new Error('No message id specified for reply'));
+    return res.badRequest('No message id specified for reply');
   }
 
   var _replies = await Reply.find({ message: messageId });
