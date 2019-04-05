@@ -5,17 +5,20 @@ module.exports = async function create(req, res) {
   }
 
   var foundUser = await User.findOne({ userName });
-
+  // in this case, just create a new user (remove in future if we add auth/registration functionality)
   if (!foundUser) {
-    await User.create({ userName });
+    foundUser = await User.create({ userName });
   }
 
-  var _message = await Message.create({
-    body: req.body.body,
-    author: foundUser.id,
-  })
-
+  try {
+    var createdMessage = await Message.create({
+      body: req.body.body,
+      author: foundUser.id,
+    }).fetch();
+  } catch(e) {
+    return res.serverError(e);
+  }
 
   res.status(201);
-  res.json(_message);
+  return res.json({ status: 201, resourceId: createdMessage.id, message: 'Created message successfully' });
 }
