@@ -25,4 +25,4 @@ module.exports = async function getAllMessages(req, res) {
     message: 'Found replies successfully',
     data: replies
   });
-}
+};

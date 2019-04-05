@@ -4,4 +4,4 @@ module.exports = {
     author: { model: 'User' }, // association
     message: { model: 'Message' } // association
   },
-}
+};

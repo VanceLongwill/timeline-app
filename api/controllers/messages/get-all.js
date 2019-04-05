@@ -8,7 +8,8 @@ module.exports = async function getAllMessages(req, res) {
     _messages[i].author = author.userName;
     // remove unnecessary fields to reduce response body size
     delete _messages[i].updatedAt;
-    // delete _messages[i].replies;
+    // use a separate request for replies
+    delete _messages[i].replies;
   }
 
   var messages = _messages.sort((a, b) => { // sort by time created (newest first)
@@ -21,4 +22,4 @@ module.exports = async function getAllMessages(req, res) {
     message: 'Found messages successfully',
     data: messages
   });
-}
+};

@@ -1,7 +1,7 @@
 module.exports = async function create(req, res) {
   var userName = req.body.author;
   if (!userName || !userName.length) {
-     return res.badRequest(new Error('No author specified for message'));
+    return res.badRequest(new Error('No author specified for message'));
   }
 
   var foundUser = await User.findOne({ userName });
@@ -10,8 +10,9 @@ module.exports = async function create(req, res) {
     foundUser = await User.create({ userName });
   }
 
+  var createdMessage;
   try {
-    var createdMessage = await Message.create({
+    createdMessage = await Message.create({
       body: req.body.body,
       author: foundUser.id,
     }).fetch();
@@ -21,4 +22,4 @@ module.exports = async function create(req, res) {
 
   res.status(201);
   return res.json({ status: 201, resourceId: createdMessage.id, message: 'Created message successfully' });
-}
+};
