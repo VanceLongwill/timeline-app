@@ -22,8 +22,8 @@ module.exports.routes = {
   '/': { view: 'pages/homepage' },
   'GET /api/v1/messages': { action: 'messages/get-all' },
   'POST /api/v1/messages': { action: 'messages/create' },
-  'POST /api/v1/messages/:id': { action: 'replies/create-reply' },
-  'GET /api/v1/messages/:id': { action: 'replies/get-all' }
+  'POST /api/v1/messages/:id/replies': { action: 'replies/create-reply' },
+  'GET /api/v1/messages/:id/replies': { action: 'replies/get-all' }
 
 
   /***************************************************************************
