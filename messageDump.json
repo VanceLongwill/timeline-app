@@ -1,0 +1,34 @@
+[{
+	"_id": {
+		"$oid": "5ca9ef30db554e8b63bedff6"
+	},
+	"createdAt": 1.55464068872e+12,
+	"updatedAt": 1.55464068872e+12,
+	"body": "The first message",
+	"author": {
+		"$oid": "5ca9ef30db554e8b63bedff5"
+	}
+},
+{
+	"_id": {
+		"$oid": "5ca9ef6cdb554e8b63bedff8"
+	},
+	"createdAt": 1.554640748107e+12,
+	"updatedAt": 1.554640748107e+12,
+	"body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+	"author": {
+		"$oid": "5ca9ef6cdb554e8b63bedff7"
+	}
+},
+{
+	"_id": {
+		"$oid": "5caa2414db554e8b63bedffe"
+	},
+	"createdAt": 1.554654228939e+12,
+	"updatedAt": 1.554654228939e+12,
+	"body": "Another 1",
+	"author": {
+		"$oid": "5caa2414db554e8b63bedffd"
+	}
+}]
+

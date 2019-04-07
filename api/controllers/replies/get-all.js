@@ -15,8 +15,8 @@ module.exports = async function getAllMessages(req, res) {
     delete _replies[i].updatedAt;
   }
 
-  var replies = _replies.sort((a, b) => { // sort by time created (newest first)
-    return b.createdAt - a.createdAt;
+  var replies = _replies.sort((a, b) => { // sort by time created (newest last)
+    return a.createdAt - b.createdAt;
   });
 
   res.status(200);
